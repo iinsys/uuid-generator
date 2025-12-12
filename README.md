@@ -46,6 +46,20 @@ java -jar target/uuid-generator-1.0.0.jar
 
 The application will start on **port 8900**.
 
+### Docker Support
+
+The project includes a multi-stage Dockerfile optimized for size (under 100MB) using Alpine Linux and a custom JRE.
+
+**Build the Image:**
+```bash
+docker build -t uuid-generator:minimal .
+```
+
+**Run the Container:**
+```bash
+docker run -d -p 8900:8900 --name uuid-app uuid-generator:minimal
+```
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
